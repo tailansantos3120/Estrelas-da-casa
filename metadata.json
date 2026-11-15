@@ -1,0 +1,10 @@
+{
+  "name": "Remix Remix Remix Remix Remix Remix Remix Remix Remix Remix Remix Remix Remix Remix Estrelas da Casa - Cada um por si",
+  "description": "Aplicativo competitivo de tarefas domésticas, rotinas diárias, dados de poderes e ranking de estrelas entre Tailan, Carol, Karine e Caio.",
+  "requestFramePermissions": [
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

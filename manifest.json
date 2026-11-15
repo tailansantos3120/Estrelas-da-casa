@@ -1,0 +1,68 @@
+{
+  "id": "/",
+  "name": "Estrelas da Casa - Cada um por si",
+  "short_name": "EstrelasCasa",
+  "description": "Competição familiar de rotinas, tarefas da casa, dado com poderes e ranking de estrelas.",
+  "theme_color": "#090B10",
+  "background_color": "#090B10",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
+  "orientation": "portrait",
+  "lang": "pt-BR",
+  "start_url": "/",
+  "scope": "/",
+  "categories": ["lifestyle", "productivity", "games"],
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "/pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-maskable-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Painel de Hoje",
+      "short_name": "Painel",
+      "url": "/?tab=painel",
+      "icons": [{ "src": "/pwa-192x192.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "Ranking da Casa",
+      "short_name": "Ranking",
+      "url": "/?tab=ranking",
+      "icons": [{ "src": "/pwa-192x192.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "Chat da Casa",
+      "short_name": "Chat",
+      "url": "/?tab=chat",
+      "icons": [{ "src": "/pwa-192x192.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "Chat com IA",
+      "short_name": "Chat IA",
+      "url": "/?tab=ia",
+      "icons": [{ "src": "/pwa-192x192.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "Regras do Jogo",
+      "short_name": "Regras",
+      "url": "/?tab=regras",
+      "icons": [{ "src": "/pwa-192x192.png", "sizes": "192x192", "type": "image/png" }]
+    }
+  ]
+}
