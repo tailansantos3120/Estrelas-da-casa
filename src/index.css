@@ -1,0 +1,170 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-display: 'Plus Jakarta Sans', sans-serif;
+    --font-sans: 'DM Sans', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    --safe-top: env(safe-area-inset-top, 0px);
+    --safe-bottom: env(safe-area-inset-bottom, 0px);
+    --safe-left: env(safe-area-inset-left, 0px);
+    --safe-right: env(safe-area-inset-right, 0px);
+  }
+
+  html,
+  body {
+    font-family: var(--font-sans);
+    min-height: 100vh;
+    min-height: 100dvh;
+    overscroll-behavior-y: contain;
+    scroll-padding-bottom: calc(88px + var(--safe-bottom));
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    touch-action: manipulation;
+  }
+
+  /* Disable accidental text selection on native-like UI controls */
+  button,
+  nav,
+  [role="button"],
+  [role="tab"] {
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  /* Allow selection inside inputs and textareas */
+  input,
+  textarea {
+    user-select: text;
+    -webkit-user-select: text;
+    font-size: 16px;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-mono-num {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Modern golden focus ring & 14px input standard requested by user */
+.modern-input {
+  border-radius: 14px;
+  font-size: 16px;
+  transition: border-color 150ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modern-input:focus,
+.modern-input:focus-visible {
+  outline: none;
+  border-color: #eab308;
+  box-shadow: 0 0 0 3px rgba(234, 179, 8, 0.22);
+}
+
+/* Android 15 Edge-to-Edge Safe Area padding helpers */
+.pt-safe {
+  padding-top: max(12px, env(safe-area-inset-top, 0px));
+}
+
+.pb-safe {
+  padding-bottom: max(10px, env(safe-area-inset-bottom, 0px));
+}
+
+.px-safe {
+  padding-left: env(safe-area-inset-left, 0px);
+  padding-right: env(safe-area-inset-right, 0px);
+}
+
+.pb-nav-safe {
+  padding-bottom: calc(5.5rem + env(safe-area-inset-bottom, 0px));
+}
+
+/* Cohesive Glassmorphism Design System */
+.glass-card {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.88) 0%, rgba(248, 250, 252, 0.72) 100%);
+  backdrop-filter: blur(20px) saturate(145%);
+  -webkit-backdrop-filter: blur(20px) saturate(145%);
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  box-shadow:
+    0 14px 38px -14px rgba(15, 23, 42, 0.12),
+    0 4px 12px -4px rgba(15, 23, 42, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.dark .glass-card {
+  background: linear-gradient(145deg, rgba(24, 30, 44, 0.76) 0%, rgba(16, 20, 30, 0.66) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow:
+    0 22px 50px -18px rgba(0, 0, 0, 0.72),
+    0 6px 16px -6px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.09);
+}
+
+.glass-subcard {
+  background: linear-gradient(155deg, rgba(255, 255, 255, 0.72) 0%, rgba(241, 245, 249, 0.56) 100%);
+  backdrop-filter: blur(14px) saturate(130%);
+  -webkit-backdrop-filter: blur(14px) saturate(130%);
+  border: 1px solid rgba(148, 163, 184, 0.24);
+  box-shadow:
+    0 8px 24px -12px rgba(15, 23, 42, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.dark .glass-subcard {
+  background: linear-gradient(155deg, rgba(16, 21, 33, 0.74) 0%, rgba(10, 13, 20, 0.62) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 12px 30px -14px rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.glass-gold {
+  background: linear-gradient(145deg, rgba(254, 243, 199, 0.76) 0%, rgba(255, 251, 235, 0.62) 55%, rgba(255, 255, 255, 0.7) 100%);
+  backdrop-filter: blur(22px) saturate(150%);
+  -webkit-backdrop-filter: blur(22px) saturate(150%);
+  border: 1px solid rgba(245, 158, 11, 0.42);
+  box-shadow:
+    0 18px 42px -14px rgba(245, 158, 11, 0.22),
+    0 4px 12px -4px rgba(15, 23, 42, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.85);
+}
+
+.dark .glass-gold {
+  background: linear-gradient(145deg, rgba(245, 158, 11, 0.16) 0%, rgba(24, 29, 43, 0.8) 52%, rgba(15, 18, 28, 0.76) 100%);
+  border: 1px solid rgba(251, 191, 36, 0.36);
+  box-shadow:
+    0 22px 48px -16px rgba(245, 158, 11, 0.2),
+    0 8px 20px -8px rgba(0, 0, 0, 0.65),
+    inset 0 1px 0 rgba(253, 224, 71, 0.22);
+}
+
+.glass-rose {
+  background: linear-gradient(145deg, rgba(255, 228, 230, 0.72) 0%, rgba(255, 255, 255, 0.66) 100%);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  border: 1px solid rgba(244, 63, 94, 0.32);
+  box-shadow:
+    0 16px 38px -14px rgba(244, 63, 94, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.dark .glass-rose {
+  background: linear-gradient(145deg, rgba(244, 63, 94, 0.14) 0%, rgba(20, 22, 32, 0.78) 65%);
+  border: 1px solid rgba(251, 113, 133, 0.32);
+  box-shadow:
+    0 20px 44px -16px rgba(0, 0, 0, 0.65),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
